@@ -1,4 +1,4 @@
-package kr.co.zzimcar.config;
+package io.nmapi.cloud.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;

@@ -1,4 +1,4 @@
-package kr.co.zzimcar.dto;
+package io.nmapi.cloud.dto;
 
 import lombok.Getter;
 import lombok.Setter;

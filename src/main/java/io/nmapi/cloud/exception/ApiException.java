@@ -1,6 +1,6 @@
-package kr.co.zzimcar.exception;
+package io.nmapi.cloud.exception;
 
-import kr.co.zzimcar.enumeration.ResponseCode;
+import io.nmapi.cloud.enumeration.ResponseCode;
 import lombok.Getter;
 
 @Getter

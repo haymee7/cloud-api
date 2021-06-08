@@ -1,18 +1,17 @@
-package kr.co.zzimcar.serviceImpl;
+package io.nmapi.cloud.serviceImpl;
 
-import kr.co.zzimcar.dao.BlogDao;
-import kr.co.zzimcar.dto.BlogDto;
-import kr.co.zzimcar.dto.BlogReqDto;
-import kr.co.zzimcar.dto.ResponseDto;
-import kr.co.zzimcar.exception.ApiException;
-import kr.co.zzimcar.service.BlogService;
+import io.nmapi.cloud.dao.BlogDao;
+import io.nmapi.cloud.dto.BlogDto;
+import io.nmapi.cloud.dto.BlogReqDto;
+import io.nmapi.cloud.dto.ResponseDto;
+import io.nmapi.cloud.enumeration.ResponseCode;
+import io.nmapi.cloud.exception.ApiException;
+import io.nmapi.cloud.service.BlogService;
 import lombok.RequiredArgsConstructor;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-
-import static kr.co.zzimcar.enumeration.ResponseCode.BLOG_SAVE_FAILED;
 
 @Service
 @RequiredArgsConstructor
@@ -30,7 +29,7 @@ public class BlogServiceImpl implements BlogService {
       log.info("-- 블로그 저장 실패", e);
 
       // return ResponseEntity.ok(new ResponseDto<>(BLOG_SAVE_FAILED));
-      throw new ApiException(BLOG_SAVE_FAILED);
+      throw new ApiException(ResponseCode.BLOG_SAVE_FAILED);
     }
   }
 }

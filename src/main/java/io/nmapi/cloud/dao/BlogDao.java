@@ -1,6 +1,6 @@
-package kr.co.zzimcar.dao;
+package io.nmapi.cloud.dao;
 
-import kr.co.zzimcar.dto.BlogDto;
+import io.nmapi.cloud.dto.BlogDto;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
 

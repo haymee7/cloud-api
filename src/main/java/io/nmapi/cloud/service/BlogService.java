@@ -1,7 +1,7 @@
-package kr.co.zzimcar.service;
+package io.nmapi.cloud.service;
 
-import kr.co.zzimcar.dto.BlogReqDto;
-import kr.co.zzimcar.dto.ResponseDto;
+import io.nmapi.cloud.dto.BlogReqDto;
+import io.nmapi.cloud.dto.ResponseDto;
 import org.springframework.http.ResponseEntity;
 
 public interface BlogService {

@@ -1,7 +1,7 @@
-package kr.co.zzimcar.dto;
+package io.nmapi.cloud.dto;
 
-import kr.co.zzimcar.enumeration.ResponseCode;
-import kr.co.zzimcar.exception.ApiException;
+import io.nmapi.cloud.enumeration.ResponseCode;
+import io.nmapi.cloud.exception.ApiException;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;

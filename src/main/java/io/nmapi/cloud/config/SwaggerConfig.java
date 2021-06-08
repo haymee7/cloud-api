@@ -1,4 +1,4 @@
-package kr.co.zzimcar.config;
+package io.nmapi.cloud.config;
 
 import com.fasterxml.classmate.TypeResolver;
 import org.springframework.context.annotation.Bean;

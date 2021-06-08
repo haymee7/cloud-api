@@ -1,4 +1,4 @@
-package kr.co.zzimcar.enumeration;
+package io.nmapi.cloud.enumeration;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;

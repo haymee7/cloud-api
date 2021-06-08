@@ -1,10 +1,10 @@
-package kr.co.zzimcar.controller;
+package io.nmapi.cloud.controller;
 
+import io.nmapi.cloud.dto.BlogReqDto;
+import io.nmapi.cloud.dto.ResponseDto;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
-import kr.co.zzimcar.dto.BlogReqDto;
-import kr.co.zzimcar.dto.ResponseDto;
-import kr.co.zzimcar.service.BlogService;
+import io.nmapi.cloud.service.BlogService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;

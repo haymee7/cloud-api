@@ -1,6 +1,6 @@
-package kr.co.zzimcar.exception;
+package io.nmapi.cloud.exception;
 
-import kr.co.zzimcar.dto.ResponseDto;
+import io.nmapi.cloud.dto.ResponseDto;
 import org.springframework.core.Ordered;
 import org.springframework.core.annotation.Order;
 import org.springframework.http.HttpHeaders;

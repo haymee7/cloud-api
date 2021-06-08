@@ -1,4 +1,4 @@
-package kr.co.zzimcar.util;
+package io.nmapi.cloud.util;
 
 import lombok.RequiredArgsConstructor;
 import org.apache.logging.log4j.LogManager;
