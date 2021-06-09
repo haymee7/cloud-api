@@ -1,6 +1,6 @@
 package io.nmapi.cloud.exception;
 
-import io.nmapi.cloud.dto.ResponseDto;
+import io.nmapi.cloud.model.ResponseModel;
 import org.springframework.core.Ordered;
 import org.springframework.core.annotation.Order;
 import org.springframework.http.HttpHeaders;
@@ -17,14 +17,14 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExcep
 @ControllerAdvice
 public class ApiExceptionHandler extends ResponseEntityExceptionHandler {
 
-  private ResponseEntity<Object> buildResponseEntity(ResponseDto<Void> responseDto) {
-    return ResponseEntity.ok(responseDto);
+  private ResponseEntity<Object> buildResponseEntity(ResponseModel<Void> responseModel) {
+    return ResponseEntity.ok(responseModel);
   }
 
   @Override
   protected ResponseEntity<Object> handleMethodArgumentNotValid(MethodArgumentNotValidException ex, HttpHeaders headers, HttpStatus status,
                                                                 WebRequest request) {
-    ResponseDto<Void> responseDto = new ResponseDto<Void>(false);
+    ResponseModel<Void> responseModel = new ResponseModel<Void>(false);
 
     String message = !ex.getBindingResult().getFieldErrors().isEmpty() ?
       "[" + ex.getBindingResult().getFieldErrors().get(0).getField() + "]" + ex.getBindingResult().getFieldErrors().get(0).getDefaultMessage() :
@@ -32,20 +32,20 @@ public class ApiExceptionHandler extends ResponseEntityExceptionHandler {
         "[" + ex.getBindingResult().getGlobalErrors().get(0).getObjectName() + "]" + ex.getBindingResult().getGlobalErrors().get(0).getDefaultMessage()
         : "데이터 형식 오류";
 
-    responseDto.setMessage(message);
+    responseModel.setMessage(message);
 
 
-    return buildResponseEntity(responseDto);
+    return buildResponseEntity(responseModel);
   }
 
   @Override
   protected ResponseEntity<Object> handleHttpMessageNotReadable(HttpMessageNotReadableException ex, HttpHeaders headers, HttpStatus status, WebRequest request) {
     String error = "Malformed JSON request";
-    return buildResponseEntity(new ResponseDto<>("요청 JSON 포맷 오류"));
+    return buildResponseEntity(new ResponseModel<>("요청 JSON 포맷 오류"));
   }
 
   @ExceptionHandler(ApiException.class)
   protected ResponseEntity<Object> handleIntApiException(ApiException ex) {
-    return buildResponseEntity(new ResponseDto(ex));
+    return buildResponseEntity(new ResponseModel(ex));
   }
 }

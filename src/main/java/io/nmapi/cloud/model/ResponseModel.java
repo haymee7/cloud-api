@@ -1,4 +1,4 @@
-package io.nmapi.cloud.dto;
+package io.nmapi.cloud.model;
 
 import io.nmapi.cloud.enumeration.ResponseCode;
 import io.nmapi.cloud.exception.ApiException;
@@ -9,38 +9,38 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
-public class ResponseDto<T> {
+public class ResponseModel<T> {
   private boolean success;
   private String code;
   private String message;
   private T data;
 
 
-  public ResponseDto(boolean success) {
+  public ResponseModel(boolean success) {
     this.success = success;
   }
 
 
-  public ResponseDto(ResponseCode code) {
+  public ResponseModel(ResponseCode code) {
     this.success = false;
     this.code = code.getCode();
     this.message = code.getMessage();
   }
 
 
-  public ResponseDto(String code, String message) {
+  public ResponseModel(String code, String message) {
     this.success = false;
     this.code = code;
     this.message = message;
   }
 
-  public ResponseDto(String message) {
+  public ResponseModel(String message) {
     this.success = false;
     this.message = message;
   }
 
 
-  public ResponseDto(ApiException ex) {
+  public ResponseModel(ApiException ex) {
     this.success = false;
     this.code = ex.getCode();
     this.message = ex.getMessage();

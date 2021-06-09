@@ -17,10 +17,10 @@ import java.util.*;
 @EnableSwagger2
 public class SwaggerConfig {
   public static final Contact DEFAULT_CONTACT = new Contact(
-    "NM Playground", "http://nm-playground.io", "development@naturemobility.com");
+    "Naturemobility Cloud API", "https://cloud.nm-api.io", "development@naturemobility.com");
 
   public static final ApiInfo DEFAULT_API_INFO = new ApiInfo(
-    "Playground API", "교육용", "1.0", "urn:tos",
+    "Naturemobility Cloud API", "항공권 연동 API", "1.0", "",
     DEFAULT_CONTACT, "Apache 2.0", "http://www.apache.org/licenses/LICENSE-2.0", Collections.emptyList());
 
   private static final Set<String> DEFAULT_PRODUCES_AND_CONSUMES = new HashSet<String>(Arrays.asList(
