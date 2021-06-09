@@ -28,6 +28,12 @@ public class ResponseModel<T> {
   }
 
 
+  public ResponseModel(boolean success, T data) {
+    this.success = success;
+    this.data = data;
+  }
+
+
   public ResponseModel(String code, String message) {
     this.success = false;
     this.code = code;
